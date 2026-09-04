@@ -1,0 +1,28 @@
+{
+  "name": "anyapi-mcp",
+  "version": "0.1.0",
+  "description": "Local stdio MCP server for AnyAPI - hundreds of scraping and data APIs behind one key, priced per request in USD. Proxies to the hosted AnyAPI MCP server.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "bin": { "anyapi-mcp": "dist/index.js" },
+  "main": "dist/index.js",
+  "files": ["dist"],
+  "engines": { "node": ">=20" },
+  "repository": { "type": "git", "url": "git+https://github.com/getanyapi-com/mcp.git" },
+  "homepage": "https://getanyapi.com",
+  "bugs": { "url": "https://github.com/getanyapi-com/mcp/issues" },
+  "keywords": ["mcp", "modelcontextprotocol", "anyapi", "scraping", "data-api", "web-scraping"],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test dist/*.test.js",
+    "check": "npm run build && npm test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.3"
+  }
+}
