@@ -14,7 +14,10 @@ Use this one when your client only launches local MCP servers over stdio.
 
 ## Install
 
-With `npx`, no clone and no build:
+> **Not released yet.** `anyapi-mcp` on npm and `ghcr.io/getanyapi-com/mcp` are published by the
+> first `v*` tag. Until then, build from source with the Docker recipe below, which works today.
+
+With `npx`, once released:
 
 ```json
 {
@@ -28,19 +31,25 @@ With `npx`, no clone and no build:
 }
 ```
 
-With Docker:
+With Docker, from a clone:
+
+```bash
+docker build -t anyapi-mcp .
+```
 
 ```json
 {
   "mcpServers": {
     "anyapi": {
       "command": "docker",
-      "args": ["run", "-i", "--rm", "-e", "ANYAPI_API_KEY", "ghcr.io/getanyapi-com/mcp"],
+      "args": ["run", "-i", "--rm", "-e", "ANYAPI_API_KEY", "anyapi-mcp"],
       "env": { "ANYAPI_API_KEY": "aa_live_..." }
     }
   }
 }
 ```
+
+Once released the image name becomes `ghcr.io/getanyapi-com/mcp` and no clone is needed.
 
 Get a key at https://getanyapi.com/dashboard/keys. Agents can mint their own
 free-trial key with no dashboard and no email:
