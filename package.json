@@ -1,6 +1,6 @@
 {
   "name": "anyapi-mcp",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "mcpName": "io.github.getanyapi-com/anyapi",
   "description": "Local stdio MCP server for AnyAPI - hundreds of scraping and data APIs behind one key, priced per request in USD. Proxies to the hosted AnyAPI MCP server.",
   "license": "Apache-2.0",

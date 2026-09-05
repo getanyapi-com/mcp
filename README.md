@@ -53,18 +53,19 @@ curl -s -X POST https://api.getanyapi.com/agent/signup
 
 | Variable | Required | Default | Meaning |
 | --- | --- | --- | --- |
-| `ANYAPI_API_KEY` | No | none | Your AnyAPI key. Every tool call needs it. Connecting and listing the tools does not. |
+| `ANYAPI_API_KEY` | No | none | Your AnyAPI key. Running an API needs it. Connecting, listing the tools, and the four catalog tools do not. |
 | `ANYAPI_MCP_URL` | No | `https://api.getanyapi.com/mcp` | The hosted endpoint to proxy to. |
 
 The key is optional on purpose, but be precise about what that buys. The hosted
 server answers `initialize` and `tools/list` without a credential, so a client
-connects and sees the ten tools with no account. **Every `tools/call` needs a
-key, including the discovery tools** - `search_apis`, `list_apis` and `get_api`
-all return 401 without one.
+connects and sees the ten tools with no account. It also answers the four
+catalog tools without one - `search_apis`, `list_apis`, `get_api` and
+`quote_api` - so a keyless install can find an API, read its input schema and
+price a call. **`run_api` and the account tools return 401 without a key.**
 
-To read the catalog with no account at all, use the public REST endpoints
-instead: `GET https://api.getanyapi.com/catalog` and
-`GET https://api.getanyapi.com/catalog/search`. Both answer keyless.
+The same catalog is public over REST as well:
+`GET https://api.getanyapi.com/catalog` and
+`GET https://api.getanyapi.com/catalog/search`.
 
 ## Tools
 
