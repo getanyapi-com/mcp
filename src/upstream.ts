@@ -2,6 +2,7 @@ import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 
 import { upstreamHeaders, type ProxyConfig } from './config.js';
+import { VERSION } from './version.js';
 
 /** A connected client for the hosted AnyAPI MCP server. */
 export interface Upstream {
@@ -11,7 +12,7 @@ export interface Upstream {
   close(): Promise<void>;
 }
 
-const CLIENT_INFO = { name: 'anyapi-mcp', version: '0.1.0' } as const;
+const CLIENT_INFO = { name: 'anyapi-mcp', version: VERSION };
 
 /**
  * Connect to the hosted AnyAPI MCP server.

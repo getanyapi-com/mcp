@@ -5,8 +5,9 @@ import {
 } from '@modelcontextprotocol/sdk/types.js';
 
 import type { Upstream } from './upstream.js';
+import { VERSION } from './version.js';
 
-const SERVER_INFO = { name: 'anyapi', version: '0.1.0' } as const;
+const SERVER_INFO = { name: 'anyapi', version: VERSION };
 
 /**
  * Build a stdio-facing MCP server that forwards to the hosted AnyAPI server.

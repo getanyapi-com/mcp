@@ -1,6 +1,6 @@
 {
   "name": "anyapi-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Local stdio MCP server for AnyAPI - hundreds of scraping and data APIs behind one key, priced per request in USD. Proxies to the hosted AnyAPI MCP server.",
   "license": "Apache-2.0",
   "type": "module",
