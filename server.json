@@ -1,0 +1,61 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.getanyapi-com/anyapi",
+  "description": "Hundreds of scraping & data APIs through one key. USD pay-per-request, normalized schemas, failover.",
+  "version": "0.1.2",
+  "websiteUrl": "https://getanyapi.com",
+  "repository": {
+    "url": "https://github.com/getanyapi-com/mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.getanyapi.com/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "AnyAPI API key as a Bearer token (format: Bearer aa_live_...). Mint one at https://getanyapi.com/dashboard/keys. Discovery works without a key; running an API requires one.",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "anyapi-mcp",
+      "version": "0.1.2",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "ANYAPI_API_KEY",
+          "description": "AnyAPI API key (format: aa_live_...). Mint one at https://getanyapi.com/dashboard/keys. Discovery works without a key; running an API requires one.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    },
+    {
+      "registryType": "oci",
+      "identifier": "ghcr.io/getanyapi-com/mcp:0.1.2",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "ANYAPI_API_KEY",
+          "description": "AnyAPI API key (format: aa_live_...). Mint one at https://getanyapi.com/dashboard/keys. Discovery works without a key; running an API requires one.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

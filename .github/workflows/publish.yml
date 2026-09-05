@@ -52,3 +52,23 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+  # The MCP Registry only stores metadata, and it verifies that metadata by
+  # fetching the artifacts it points at: the npm package must already serve
+  # `mcpName`, and the image must already carry the matching label. So this runs
+  # only after both publishes succeeded.
+  registry:
+    needs: [npm, ghcr]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install mcp-publisher
+        run: |
+          curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
+      # No secret. The registry reads the workflow's OIDC token and grants the
+      # namespace of the repository owner, which is io.github.getanyapi-com/*.
+      - run: ./mcp-publisher login github-oidc
+      - run: ./mcp-publisher publish
