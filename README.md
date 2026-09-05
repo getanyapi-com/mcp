@@ -28,18 +28,14 @@ With `npx`, no clone and no build:
 }
 ```
 
-With Docker, from a clone:
-
-```bash
-docker build -t anyapi-mcp .
-```
+With Docker, no clone and no build:
 
 ```json
 {
   "mcpServers": {
     "anyapi": {
       "command": "docker",
-      "args": ["run", "-i", "--rm", "-e", "ANYAPI_API_KEY", "anyapi-mcp"],
+      "args": ["run", "-i", "--rm", "-e", "ANYAPI_API_KEY", "ghcr.io/getanyapi-com/mcp"],
       "env": { "ANYAPI_API_KEY": "aa_live_..." }
     }
   }
