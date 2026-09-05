@@ -1,8 +1,9 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.getanyapi-com/anyapi",
+  "title": "AnyAPI",
   "description": "Hundreds of scraping & data APIs through one key. USD pay-per-request, normalized schemas, failover.",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "websiteUrl": "https://getanyapi.com",
   "repository": {
     "url": "https://github.com/getanyapi-com/mcp",
@@ -27,7 +28,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "anyapi-mcp",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "runtimeHint": "npx",
       "transport": {
         "type": "stdio"
@@ -43,7 +44,7 @@
     },
     {
       "registryType": "oci",
-      "identifier": "ghcr.io/getanyapi-com/mcp:0.1.3",
+      "identifier": "ghcr.io/getanyapi-com/mcp:0.1.4",
       "runtimeHint": "docker",
       "transport": {
         "type": "stdio"
