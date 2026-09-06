@@ -3,7 +3,7 @@
   "name": "io.github.getanyapi-com/anyapi",
   "title": "AnyAPI",
   "description": "Hundreds of scraping & data APIs through one key. USD pay-per-request, normalized schemas, failover.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "websiteUrl": "https://getanyapi.com",
   "repository": {
     "url": "https://github.com/getanyapi-com/mcp",
@@ -28,7 +28,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "anyapi-mcp",
-      "version": "0.1.4",
+      "version": "0.1.5",
       "runtimeHint": "npx",
       "transport": {
         "type": "stdio"
@@ -44,7 +44,7 @@
     },
     {
       "registryType": "oci",
-      "identifier": "ghcr.io/getanyapi-com/mcp:0.1.4",
+      "identifier": "ghcr.io/getanyapi-com/mcp:0.1.5",
       "runtimeHint": "docker",
       "transport": {
         "type": "stdio"
